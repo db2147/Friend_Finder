@@ -4,6 +4,8 @@ var friendsData = require('../data/friends.js'); // created a new variable which
 module.exports = function (app) {
 
     app.get('/api/friends', function (req,res) {
+        console.log(friendsData);
+
         res.json(friendsData);  //  
     });
 
@@ -12,10 +14,11 @@ module.exports = function (app) {
         //newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
     
         console.log(newFriend);
+        res.redirect("/");
     
-        characters.push(newFriend); // pushes new character into existing characters array
+        //characters.push(newFriend); // pushes new character into existing characters array
     
-        res.json(newFriend);  // send new character as a json
+        // res.json(newFriend);  // send new character as a json
     
     });
 }
