@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FriendFinder</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome Glyphicons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div style='background-color: lightgreen;' class="navbar">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="survey">Take Survey</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1>
+                <i class="fa fa-facebook-square" aria-hidden="true">...</i>
+                "Friend Finder Results"
+            </h1>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a>
+
+    </footer>
+
+    </div>
+    <script>
+        var you;
+        var friendsData;
+
+        $.ajax({
+            method: "GET",
+            url: "/api/you",
+            success: function (data) {
+                you = data;
+                getFriends();
+            }
+        });
+
+        function getFriends() {
+            $.ajax({
+                method: "GET",
+                url: "/api/friends",
+                success: function (data) {
+                    friendsData = data;
+                    getMatch(you, friendsData)
+                }
+            });
+        }
+
+        function getMatch(you, friends) {
+            console.log(you);
+            console.log(friendsData);
+            getDifference(you.scores, friendsData[0].scores)
+
+
+
+        }
+
+        function getDifference(personA, personB) {
+            var matchRating = 0;
+            personA.forEach(function (val, index) {
+                matchRating += Math.abs(val - personB[index]);
+            });
+            console.log(matchRating);
+
+
+        }
+    </script>
+</body>
+
+</html>
