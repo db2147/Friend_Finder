@@ -12,8 +12,8 @@ Express js handles the routing for us along with body parser and path dependenci
 <br>
 <img src="images/routes.PNG" alt="Drawing" style="width: 350px; float: right;" />
 <br>
-Here is an example of a get request in our api-routes file:<br><br>We use the get function routing to our variable friends located in our friends.js directory. &nbsp;Inside the function there is a request and a response (function(req,res). &nbsp;We console.log the friendsData variable and json turns this object into a string for us to use in our application.
+Here is an example of a get request in our api-routes file:<br><br>We use the get function routing to the variable friends located in our friends.js directory. &nbsp;Inside the function there is a request and a response (function(req,res). &nbsp;We console.log the friendsData variable and json turns this object into a string for us to use in our application.
 <br>
 <br>
 <img src="images/heroku.png" alt="Drawing" style="width: 400px; float: left;" /> <br>I deployed my application through Heroku.
-<br><br>Happy Hunting!
+ Happy Hunting!
