@@ -1,4 +1,4 @@
- #Friend Finder
+
 Looking to find that special someone?&nbsp; Look no further!&nbsp; This Friend Finder application is a dating app to assist with all your relationship needs. 
 <br>
 <br>
