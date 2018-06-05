@@ -14,7 +14,7 @@
      
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   
-<!--script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script-->
+    <!-- internal css -->
     <style>
         .forma{
             background-color: lightblue;
@@ -23,6 +23,7 @@
     </style>
 </head>
 
+<!-- styling for navbar -->
 <body> 
     <div style='background-color: lightgreen;' class="navbar">
        <ul class="nav navbar-nav">
@@ -35,6 +36,7 @@
         </ul> 
     </div> 
 
+    <!-- bootstrap container class with the body of the survey -->
     <div class="container">
      
         <h2>Survey Questions</h2>
@@ -178,6 +180,7 @@
             <br>
             <br>
      
+        <!-- created submit button at end of survey -->
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">"Submit"</button>
         </form>
     
@@ -215,87 +218,5 @@
         </div>
     </div>
 
-        <script type="text/javascript">
-                // Chosen CSS
-                // var config = {
-                //     ".chosen-select": {},
-                //     ".chosen-select-deselect": {
-                //         allow_single_deselect: true
-                //     },
-                //     ".chosen-select-no-single": {
-                //         disble_search_threshold: 10
-                //     },
-                //     ".chosen-select-no-results": {
-                //         no_results_text: "Oops, nothing found!"
-                //     },
-                //     ".chosen-select-width": {
-                //     width: "95%"
-                //     }
-                // };
-
-                // for(var selector in config) {
-                //     $(selector).chosen(config[selector]);
-                // }
-
-                // // Capture the form inputs
-                // $("#submit").on("click", function(event) {
-                //     event.preventDefault();
-
-                    // Form validation
-                    // function validateForm() {
-                    //     var isValid = true;
-                    //     $(".form-control").each(function() {
-                    //         if ($(this).val() === "") {
-                    //             isValid = false;
-                    //         }
-                    //     });
-
-                    //     $(".chosen-select").each(function(){
-
-                    //         if($(this).val() === "") {
-                    //             isValid = false;
-                    //         }
-                    //     });
-                    //     return isValid;
-                    // }
-                    
-                    // If all required fields are filled
-                    // if (validateForm()) {
-                    //     // Create an object for the user's data
-
-                    //     var userData = {
-                    //         name: $("#name").val(),
-                    //         photo: $("#photo").val(),
-                    //         scores: [
-                    //             $("#q1").val(),
-                    //             $("#q2").val(),
-                    //             $("#q3").val(),
-                    //             $("#q4").val(),
-                    //             $("#q5").val(),
-                    //             $("#q6").val(),
-                    //             $("#q7").val(),
-                    //             $("#q8").val(),
-                    //             $("#q9").val(),
-                    //             $("#q10").val()
-                    //         ]
-                    //     };
-
-                        // // AJAX post the data to the friends API.
-
-                        // $.post("/api/friends",userData,function(data) {
-                        //     // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                        // $("#match-name").text(data.name);
-                        // $("#match-img").attr("src",data.photo);
-
-                        // // Show the modal with the best match
-                        // $("#results-modal).modal("toggle");
-
-                        // });
-                //     } else {
-                //         alert("Please fill out all fields before submitting!");
-                //     }
-                // });
-                          
-        </script>
     </body>
 </html>
