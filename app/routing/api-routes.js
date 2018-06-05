@@ -21,7 +21,7 @@ module.exports = function (app) {
         });
         newFriend.scores = parsedFriend;
         console.log(newFriend);
-        friendsData.push(newFriend);
+        friendsData.push(newFriend); 
         res.redirect("/results");
     
     });
