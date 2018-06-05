@@ -14,7 +14,7 @@ module.exports = function (app) {
         res.json(newFriend);
     })
 
-    app.post("/api/friends", function(req, res) {  // when we create a post to this route, I want you to run this function
+    app.post("/api/friends", function(req, res) {  // when we create a post to this route, it runs this function
         var newFriend = req.body;   // body came from the body parser function
         var parsedFriend = newFriend.scores.map(function (val, index) {
             return parseInt(val);
@@ -23,10 +23,6 @@ module.exports = function (app) {
         console.log(newFriend);
         friendsData.push(newFriend);
         res.redirect("/results");
-    
-        //characters.push(newFriend); // pushes new character into existing characters array
-    
-        // res.json(newFriend);  // send new character as a json
     
     });
 }
